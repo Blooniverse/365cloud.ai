@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>365cloud.ai — 365Power through Azure Cloud & Azure AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Consulting for Microsoft 365, Power Platform, Azure Cloud and Azure AI." />
+  <link rel="stylesheet" href="assets/site.css" />
+  <script src="assets/site.js" defer></script>
+  <script src="assets/structured-data.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "url":"https://365cloud.ai/",
+    "name":"365cloud.ai — Azure Cloud & AI Consulting",
+    "description":"Quick cost estimator and advisory services for Microsoft 365, Power Platform, Azure Cloud & Azure AI.",
+    "isPartOf":{"@type":"WebSite","url":"https://365cloud.ai/","name":"365cloud.ai"}
+  }
+  </script>
+</head>
+<body itemscope itemtype="http://schema.org/WebSite" typeof="schema:WebSite">
+  
+<header class="container">
+  <button id="menuBtn" aria-controls="drawer" aria-expanded="false" aria-label="Open menu">☰</button>
+  <span class="pill">365cloud.ai — Engineering Digital Transformations</span>
+  <h1>365Power through Azure Cloud &amp; Azure AI</h1>
+  <h2>Consulting for Microsoft 365, Power Platform, Azure Cloud and Azure AI</h2>
+</header>
+<div id="scrim" class="scrim" hidden></div>
+<aside id="drawer" class="drawer" aria-hidden="true" aria-label="Site menu">
+  <nav class="menu" role="navigation">
+    <a href="/">Home</a>
+    <a href="project-power/index.html">Project Power</a>
+    <a href="blog/">Blog</a>
+    <a href="imprint/">Imprint</a>
+    <hr style="border:1px solid var(--line);border-width:0 0 1px;margin:.5rem 0" />
+    <label class="switch"><input id="themeToggle" type="checkbox"/> Light mode</label>
+  </nav>
+</aside>
+
+
+  <main class="container" style="padding:2rem 0;">
+    <section>
+      <h3 style="margin:0 0 .6rem;">Quick cost estimator</h3>
+      <p class="muted">CHF only. Adjust assumptions to your context. Prices are placeholders—use your negotiated rates. Estimates exclude taxes and discounts.</p>
+
+      <div class="calc">
+        <!-- Scenario + people + license -->
+        <div class="grid-3">
+          <div class="row">
+            <label for="scenario">Scenario preset</label>
+            <select id="scenario">
+              <option value="productivity" selected>Productivity-first</option>
+              <option value="dataai">Data/AI-first</option>
+              <option value="citdev">Citizen Dev boost</option>
+            </select>
+            <p class="note" id="scenarioNote"></p>
+          </div>
+          <div class="row">
+            <label for="people">People: <strong><span id="peopleLabel">1</span></strong></label>
+            <input id="people" type="range" min="1" max="100" value="1" />
+          </div>
+          <div class="row">
+            <label for="license">M365 license</label>
+            <select id="license">
+              <option value="36" selected>Microsoft 365 E3 — CHF 36</option>
+              <option value="57">Microsoft 365 E5 — CHF 57</option>
+              <option value="23">Microsoft 365 Business Premium — CHF 23</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- One-time services FIRST (highlight) -->
+        <fieldset class="one-time">
+          <legend>One-time services</legend>
+          <div class="grid-2">
+            <div class="row">
+              <label class="inline"><input type="checkbox" id="on_tenant_chk" checked> M365 secure foundations (tenant onboarding & hardening)</label>
+              <input id="on_tenant" type="number" step="100" value="4500" />
+            </div>
+            <div class="row">
+              <label class="inline"><input type="checkbox" id="on_lz_chk"> Azure landing zone & IaC</label>
+              <input id="on_lz" type="number" step="100" value="6500" disabled />
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="row">
+              <label class="inline"><input type="checkbox" id="on_coe_chk"> Power Platform CoE setup</label>
+              <input id="on_coe" type="number" step="100" value="4000" disabled />
+            </div>
+            <div class="row">
+              <label class="inline"><input type="checkbox" id="on_adopt_chk"> Adoption & training</label>
+              <input id="on_adopt" type="number" step="100" value="3000" disabled />
+            </div>
+          </div>
+          <p class="note">One-time totals are shown separately. For budgeting, divide by 12 to approximate an annualized monthly impact.</p>
+        </fieldset>
+
+        <!-- Recurring base (consolidated Azure+Ops) -->
+        <fieldset>
+          <legend>Recurring (per-user / month)</legend>
+          <div class="grid-2">
+            <div class="row">
+              <label for="m365">(From license)</label>
+              <input id="m365" type="number" step="0.01" value="36" readonly />
+            </div>
+            <div class="row">
+              <label for="azAll">Azure incl. ops &amp; security (combined)</label>
+              <input id="azAll" type="number" step="1" value="28" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Add-ons -->
+        <fieldset>
+          <legend>Optional add-ons (per-user / month)</legend>
+          <div class="grid-3">
+            <div class="row">
+              <label class="inline"><input type="checkbox" id="co365_chk" checked> Copilot for Microsoft 365</label>
+              <input id="co365" type="number" step="1" value="30" />
+            </div>
+            <div class="row">
+              <label class="inline"><input type="checkbox" id="pp_chk"> Power Platform premium</label>
+              <input id="pp" type="number" step="1" value="18" disabled />
+            </div>
+            <div class="row">
+              <label class="inline"><input type="checkbox" id="aoai_chk"> Azure OpenAI usage (avg)</label>
+              <input id="aoai" type="number" step="1" value="10" disabled />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Output + share + quote (reduced summary) -->
+        <div class="out mono" id="out">
+          <div class="total"><strong>Total monthly (recurring):</strong> <span id="totalMonthly"></span></div>
+          <div><strong>Total yearly (recurring):</strong> <span id="totalYearly"></span></div>
+          <div class="muted">Per-user monthly (recurring): <span id="perUser"></span></div>
+          <div style="margin-top:.6rem;"><strong>One-time services total:</strong> <span id="onetimeTotal"></span></div>
+          <div class="actions">
+            <button class="btn" id="copyLink">Copy shareable link</button>
+            <button class="btn secondary" id="askQuote">Ask for quote</button>
+            <span class="toast" id="toast" role="status" aria-live="polite"></span>
+          </div>
+
+          <!-- Accordion-like quote form -->
+          <div id="quotePanel" class="mono">
+            <form id="quoteForm">
+              <div class="form-grid">
+                <div class="row">
+                  <label for="q_first">First name</label>
+                  <input type="text" id="q_first" required />
+                </div>
+                <div class="row">
+                  <label for="q_last">Second name</label>
+                  <input type="text" id="q_last" required />
+                </div>
+                <div class="row" style="grid-column:1 / span 2;">
+                  <label for="q_email">Email</label>
+                  <input type="email" id="q_email" required />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn" type="submit">Submit & prepare email</button>
+                <span class="note">Your email app will open with all details prefilled. No data is stored server-side.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="container" style="padding:1rem 0 2rem;">
+    <p class="note">Note: Product names are referenced descriptively only; 365cloud.ai is independent and not affiliated with Microsoft.</p>
+  </aside>
+
+  <footer class="container">
+    <span>© 2025 365cloud.ai — Independent consulting for Microsoft 365, Power Platform, Azure Cloud & Azure AI.</span>
+    &nbsp;|&nbsp; <a href="/imprint/">Imprint</a>
+  </footer>
+
+  <!-- Estimator JS (page-specific) -->
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const CHF = new Intl.NumberFormat('de-CH',{style:'currency',currency:'CHF',maximumFractionDigits:0});
+    const fmt = (n) => CHF.format(n);
+
+    function bindToggle(chkId, inputId){
+      const chk = $(chkId), input = $(inputId);
+      function sync(){ input.disabled = !chk.checked; }
+      chk.addEventListener('change', ()=>{ sync(); compute(); saveToUrl(); });
+      sync();
+    }
+
+    function applyScenario(val){
+      const notes = {
+        productivity: 'Higher M365 focus; modest Azure & AI experiments.',
+        dataai: 'Stronger Azure (incl. ops) and Azure OpenAI usage.',
+        citdev: 'Power Platform premium to empower makers; balanced Azure.'
+      };
+      $("scenarioNote").textContent = notes[val] || '';
+
+      if(val==='productivity'){
+        $("azAll").value = 24;
+        $("co365_chk").checked = true;  $("co365").value = 30;
+        $("pp_chk").checked = false;    $("pp").value = 18;
+        $("aoai_chk").checked = false;  $("aoai").value = 8;
+        $("on_tenant_chk").checked = true; $("on_tenant").value = 4500;
+        $("on_lz_chk").checked = false; $("on_lz").value = 6500;
+        $("on_coe_chk").checked = false; $("on_coe").value = 4000;
+        $("on_adopt_chk").checked = true; $("on_adopt").value = 3000;
+      }
+      if(val==='dataai'){
+        $("azAll").value = 38;
+        $("co365_chk").checked = true;  $("co365").value = 30;
+        $("pp_chk").checked = false;    $("pp").value = 18;
+        $("aoai_chk").checked = true;   $("aoai").value = 12;
+        $("on_tenant_chk").checked = true; $("on_tenant").value = 4500;
+        $("on_lz_chk").checked = true;  $("on_lz").value = 6500;
+        $("on_coe_chk").checked = false; $("on_coe").value = 4000;
+        $("on_adopt_chk").checked = true; $("on_adopt").value = 4000;
+      }
+      if(val==='citdev'){
+        $("azAll").value = 28;
+        $("co365_chk").checked = true;  $("co365").value = 30;
+        $("pp_chk").checked = true;     $("pp").value = 18;
+        $("aoai_chk").checked = false;  $("aoai").value = 10;
+        $("on_tenant_chk").checked = true; $("on_tenant").value = 4500;
+        $("on_lz_chk").checked = false; $("on_lz").value = 6500;
+        $("on_coe_chk").checked = true;  $("on_coe").value = 4000;
+        $("on_adopt_chk").checked = true; $("on_adopt").value = 3500;
+      }
+
+      ['co365_chk','pp_chk','aoai_chk','on_tenant_chk','on_lz_chk','on_coe_chk','on_adopt_chk'].forEach(chk=>{
+        const map = {co365_chk:'co365', pp_chk:'pp', aoai_chk:'aoai', on_tenant_chk:'on_tenant', on_lz_chk:'on_lz', on_coe_chk:'on_coe', on_adopt_chk:'on_adopt'};
+        $(map[chk]).disabled = !$(chk).checked;
+      });
+      compute();
+      saveToUrl();
+    }
+
+    function getState(){
+      return {
+        s: $("scenario").value,
+        ppl: Number($("people").value),
+        lic: Number($("license").value),
+        az: Number($("azAll").value),
+        co: Number($("co365").value), coe: Number($("co365_chk").checked),
+        ppv: Number($("pp").value), ppe: Number($("pp_chk").checked),
+        aov: Number($("aoai").value), aoe: Number($("aoai_chk").checked),
+        ot: Number($("on_tenant").value), ote: Number($("on_tenant_chk").checked),
+        lz: Number($("on_lz").value), lze: Number($("on_lz_chk").checked),
+        coe1: Number($("on_coe").value), coe1e: Number($("on_coe_chk").checked),
+        ad: Number($("on_adopt").value), ade: Number($("on_adopt_chk").checked)
+      };
+    }
+
+    function setState(st){
+      if(st.s) $("scenario").value = st.s;
+      if(st.ppl) $("people").value = st.ppl; else $("people").value = 1;
+      if(st.lic) $("license").value = st.lic;
+      $("m365").value = Number($("license").value).toFixed(2);
+      if(st.az!=null) $("azAll").value = st.az;
+      if(st.co!=null) $("co365").value = st.co;
+      if(st.coe!=null) $("co365_chk").checked = !!Number(st.coe);
+      if(st.ppv!=null) $("pp").value = st.ppv;
+      if(st.ppe!=null) $("pp_chk").checked = !!Number(st.ppe);
+      if(st.aov!=null) $("aoai").value = st.aov;
+      if(st.aoe!=null) $("aoai_chk").checked = !!Number(st.aoe);
+      if(st.ot!=null) $("on_tenant").value = st.ot;
+      if(st.ote!=null) $("on_tenant_chk").checked = !!Number(st.ote);
+      if(st.lz!=null) $("on_lz").value = st.lz;
+      if(st.lze!=null) $("on_lz_chk").checked = !!Number(st.lze);
+      if(st.coe1!=null) $("on_coe").value = st.coe1;
+      if(st.coe1e!=null) $("on_coe_chk").checked = !!Number(st.coe1e);
+      if(st.ad!=null) $("on_adopt").value = st.ad;
+      if(st.ade!=null) $("on_adopt_chk").checked = !!Number(st.ade);
+      const map = {co365_chk:'co365', pp_chk:'pp', aoai_chk:'aoai', on_tenant_chk:'on_tenant', on_lz_chk:'on_lz', on_coe_chk:'on_coe', on_adopt_chk:'on_adopt'};
+      Object.keys(map).forEach(chk=>$(map[chk]).disabled = !$(chk).checked);
+    }
+
+    function saveToUrl(){
+      const st = getState();
+      const qs = new URLSearchParams();
+      Object.entries(st).forEach(([k,v])=>{ if(v!==undefined && v!==null) qs.set(k, String(v)); });
+      const url = `${location.pathname}?${qs.toString()}`;
+      history.replaceState(null, '', url);
+    }
+
+    function loadFromUrl(){
+      const q = new URLSearchParams(location.search);
+      if(q && [...q.keys()].length){
+        const st = {};
+        q.forEach((v,k)=>{ st[k]=isNaN(Number(v))? v: Number(v); });
+        setState(st);
+      } else {
+        $("people").value = 1; applyScenario('productivity');
+      }
+      compute();
+      saveToUrl();
+    }
+
+    function compute(){
+      const people = Number($("people").value);
+      $("peopleLabel").textContent = people;
+      const m365 = Number($("license").value);
+      $("m365").value = m365.toFixed(2);
+      const azAll = Number($("azAll").value);
+
+      const baseM365 = people * m365;
+      const baseAzure = people * azAll;
+      const co365 = $("co365_chk").checked ? people * Number($("co365").value) : 0;
+      const pp    = $("pp_chk").checked ? people * Number($("pp").value) : 0;
+      const aoai  = $("aoai_chk").checked ? people * Number($("aoai").value) : 0;
+      const addonsMonthly = co365 + pp + aoai;
+
+      const totalMonthly = baseM365 + baseAzure + addonsMonthly;
+      const totalYearly = totalMonthly * 12;
+      const perUser = totalMonthly / Math.max(people,1);
+
+      const oneTenant = $("on_tenant_chk").checked ? Number($("on_tenant").value) : 0;
+      const oneLz     = $("on_lz_chk").checked ? Number($("on_lz").value) : 0;
+      const oneCoe    = $("on_coe_chk").checked ? Number($("on_coe").value) : 0;
+      const oneAdopt  = $("on_adopt_chk").checked ? Number($("on_adopt").value) : 0;
+      const oneTimeTotal = oneTenant + oneLz + oneCoe + oneAdopt;
+
+      $("totalMonthly").textContent = fmt(totalMonthly);
+      $("totalYearly").textContent = fmt(totalYearly);
+      $("perUser").textContent = fmt(perUser);
+      $("onetimeTotal").textContent = fmt(oneTimeTotal);
+
+      return { totalMonthly, totalYearly, perUser, oneTimeTotal };
+    }
+
+    ['co365_chk','pp_chk','aoai_chk','on_tenant_chk','on_lz_chk','on_coe_chk','on_adopt_chk'].forEach(chk=>{
+      const map = {co365_chk:'co365', pp_chk:'pp', aoai_chk:'aoai', on_tenant_chk:'on_tenant', on_lz_chk:'on_lz', on_coe_chk:'on_coe', on_adopt_chk:'on_adopt'};
+      bindToggle(chk, map[chk]);
+    });
+
+    ['people','license','azAll','co365','pp','aoai','on_tenant','on_lz','on_coe','on_adopt'].forEach(id=>{
+      $(id).addEventListener('input', ()=>{ compute(); saveToUrl(); });
+      $(id).addEventListener('change', ()=>{ compute(); saveToUrl(); });
+    });
+
+    $("scenario").addEventListener('change', (e)=> applyScenario(e.target.value));
+
+    $("copyLink").addEventListener('click', async ()=>{
+      try { await navigator.clipboard.writeText(location.href); $("toast").textContent = 'Link copied to clipboard'; setTimeout(()=> $("toast").textContent='', 2000); }
+      catch(err){ $("toast").textContent = 'Copy failed — copy the URL manually'; setTimeout(()=> $("toast").textContent='', 3000); }
+    });
+
+    $("askQuote").addEventListener('click', ()=>{
+      const p = $("quotePanel"); p.classList.toggle('open'); if(p.classList.contains('open')){ p.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+
+    function getLicenseLabel(v){ if(String(v)==='57') return 'Microsoft 365 E5'; if(String(v)==='23') return 'Microsoft 365 Business Premium'; return 'Microsoft 365 E3'; }
+
+    $("quoteForm").addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const first = $("q_first").value.trim();
+      const last = $("q_last").value.trim();
+      const email = $("q_email").value.trim();
+      if(!first || !last || !email){ $("toast").textContent = 'Please complete all fields.'; setTimeout(()=> $("toast").textContent='', 2500); return; }
+
+      const st = getState();
+      const { totalMonthly, totalYearly, perUser, oneTimeTotal } = compute();
+      const licenseLabel = getLicenseLabel(st.lic);
+
+      const lines = [];
+      lines.push('Quote request from 365cloud.ai estimator');
+      lines.push('');
+      lines.push(`Client: ${first} ${last}`);
+      lines.push(`Email: ${email}`);
+      lines.push('');
+      lines.push('Configuration:');
+      lines.push(`Scenario: ${st.s}`);
+      lines.push(`People: ${st.ppl}`);
+      lines.push(`License: ${licenseLabel} (CHF ${st.lic}/user/mo)`);
+      lines.push(`Azure incl. ops & security: CHF ${st.az}/user/mo`);
+      lines.push('Add-ons:');
+      lines.push(`  Copilot for M365: ${st.coe? 'ON' : 'off'} (CHF ${st.co}/user/mo)`);
+      lines.push(`  Power Platform premium: ${st.ppe? 'ON' : 'off'} (CHF ${st.ppv}/user/mo)`);
+      lines.push(`  Azure OpenAI usage: ${st.aoe? 'ON' : 'off'} (CHF ${st.aov}/user/mo)`);
+      lines.push('One-time services:');
+      lines.push(`  Secure foundations: ${st.ote? 'ON' : 'off'} (CHF ${st.ot})`);
+      lines.push(`  Landing zone & IaC: ${st.lze? 'ON' : 'off'} (CHF ${st.lz})`);
+      lines.push(`  Power Platform CoE: ${st.coe1e? 'ON' : 'off'} (CHF ${st.coe1})`);
+      lines.push(`  Adoption & training: ${st.ade? 'ON' : 'off'} (CHF ${st.ad})`);
+      lines.push('');
+      lines.push('Computed totals:');
+      lines.push(`  Total monthly (recurring): CHF ${Math.round(totalMonthly)}`);
+      lines.push(`  Total yearly (recurring): CHF ${Math.round(totalYearly)}`);
+      lines.push(`  Per-user monthly (recurring): CHF ${Math.round(perUser)}`);
+      lines.push(`  One-time total: CHF ${Math.round(oneTimeTotal)}`);
+      lines.push('');
+      lines.push(`Shareable link: ${location.href}`);
+
+      const subject = encodeURIComponent(`Quote request — ${st.ppl} ppl — ${licenseLabel}`);
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:adm.quote@365cloud.ai?subject=${subject}&body=${body}`;
+    });
+
+    loadFromUrl();
+  </script>
+</body>
+</html>
