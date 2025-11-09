@@ -32,9 +32,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}   # for PR comments
           action: "upload"
           # Repository / build configuration
-          app_location: "."          # root of the repo (contains index.html, etc.)
+          app_location: "public"          # root of the repo (contains index.html, etc.)
           api_location: "api"           # Azure Functions API folder
-          output_location: "."       # folder that now contains the generated blog HTML
+          output_location: "public"       # folder that now contains the generated blog HTML
           app_build_command: "npm run build:blog"   # explicit command for ORYX (Azure's build engine) - should, actually, not be necessary
 
   # -------------------------------------------------
