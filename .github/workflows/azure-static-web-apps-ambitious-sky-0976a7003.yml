@@ -26,7 +26,6 @@ jobs:
       #2 Install npm dependencies and run your build script
       - name: Install dependencies & build
         run: |
-          npm ci                # clean install using package‑lock.json
           npm run build         # expands to npm run build:blog → node scripts/build-blog.js
 
       #3 Deploy the already‑built static files to Azure
@@ -39,7 +38,7 @@ jobs:
           action: "upload"
           # Repository / build configuration
           app_location: "."          # root of the repo (contains index.html, etc.)
-          api_location: ""           # no Azure Functions API folder
+          api_location: "api"           # Azure Functions API folder
           output_location: "."       # folder that now contains the generated blog HTML
 
   # -------------------------------------------------
@@ -56,3 +55,4 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AMBITIOUS_SKY_0976A7003 }}
           action: "close"
+
