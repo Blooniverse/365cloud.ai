@@ -1,24 +1,45 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="de" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  sosa: http://www.w3.org/ns/sosa/ ssn: http://www.w3.org/ns/ssn/ xsd: http://www.w3.org/2001/XMLSchema# vcard: http://www.w3.org/2006/vcard/ns# ">
+<!-- Max 512 Bytes -->
+<!-- @see W3.org/2011/rdfa-context/rdfa-1.1 W3.org/TR/rdfa-primer -->
+
+
+
+
+
 <head>
-  <meta charset="utf-8" />
-  <title>365cloud.ai — 365Power durch Azure Cloud & Azure AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Beratung für Microsoft 365, Power Platform, Azure Cloud und Azure AI." />
-  <link rel="stylesheet" href="/assets/site.css" />
-  <script src="/assets/site.js" defer></script>
-  <script src="/assets/structured-data.js" defer></script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "url":"https://365cloud.ai/",
-    "name":"365cloud.ai — Azure Cloud & AI Beratung",
-    "description":"Schneller Kostenschätzer und Beratungsleistungen für Microsoft 365, Power Platform, Azure Cloud & Azure AI.",
-    "isPartOf":{"@type":"WebSite","url":"https://365cloud.ai/","name":"365cloud.ai"}
-  }
-  </script>
+
+<meta charset="utf-8">
+<title>365cloud.ai — 365Power durch Azure Cloud & Azure AI</title>
+<meta name="description" content="Beratung für Microsoft 365, Power Platform, Azure Cloud und Azure AI.">
+<meta name="keywords" content="m365, microsoft 365, power platform, azure cloud, ai, ki">
+<meta name="robots" content="index, follow, noarchive, notranslate">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+<!-- Canonical and hreflang (root is the German canonical) -->
+<link rel="canonical" href="https://365cloud.ai/" />
+<link rel="alternate" hreflang="de" href="https://365cloud.ai/" />
+<link rel="alternate" hreflang="en" href="https://365cloud.ai/en/" />
+<link rel="alternate" hreflang="x-default" href="https://365cloud.ai/" />
+  
+<link rel="stylesheet" href="/assets/site.css" />
+<script src="/assets/site.js" defer></script>
+<script src="/assets/structured-data.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "url":"https://365cloud.ai/",
+  "name":"365cloud.ai — Azure Cloud & AI Beratung",
+  "description":"Schneller Kostenschätzer und Beratungsleistungen für Microsoft 365, Power Platform, Azure Cloud & Azure AI.",
+  "isPartOf":{"@type":"WebSite","url":"https://365cloud.ai/","name":"365cloud.ai"}
+}
+</script>
 </head>
+
+
+
 <body itemscope itemtype="http://schema.org/WebSite" typeof="schema:WebSite">
   
 <header class="container">
@@ -27,6 +48,7 @@
   <h1>365Power durch Azure Cloud &amp; Azure AI</h1>
   <h2>Beratung für Microsoft 365, Power Platform, Azure Cloud und Azure AI</h2>
 </header>
+
 <div id="scrim" class="scrim" hidden></div>
 <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Seitenmenü">
   <nav class="menu" role="navigation">
@@ -49,8 +71,6 @@
 <main class="container" style="padding:2rem 0;">
   <section>
     <h3 style="margin:0 0 .6rem;">Schneller Kostenschätzer</h3>
-    <p class="muted">CHF nur. Passen Sie die Annahmen an Ihren Kontext an. Preise sind Platzhalter – verwenden Sie Ihre verhandelten Tarife. Schätzungen schließen Steuern und Rabatte aus.</p>
-
     <div class="calc">
       <div class="grid-3">
         <div class="row">
@@ -77,20 +97,20 @@
       </div>
 
       <fieldset class="one-time">
-        <legend>One-time services</legend>
+        <legend>One-time Services</legend>
         <div class="grid-2">
           <div class="row">
-            <label class="inline"><input type="checkbox" id="on_tenant_chk" checked> M365 secure foundations (tenant onboarding & hardening)</label>
+            <label class="inline"><input type="checkbox" id="on_tenant_chk" checked> M365 Secure Foundations</label>
             <input id="on_tenant" type="number" step="100" value="4500" />
           </div>
           <div class="row">
-            <label class="inline"><input type="checkbox" id="on_lz_chk"> Azure landing zone & IaC</label>
+            <label class="inline"><input type="checkbox" id="on_lz_chk"> Azure Landing Zone & IaC</label>
             <input id="on_lz" type="number" step="100" value="6500" disabled />
           </div>
         </div>
         <div class="grid-2">
           <div class="row">
-            <label class="inline"><input type="checkbox" id="on_coe_chk"> Power Platform CoE setup</label>
+            <label class="inline"><input type="checkbox" id="on_coe_chk"> Power Platform CoE Setup</label>
             <input id="on_coe" type="number" step="100" value="4000" disabled />
           </div>
           <div class="row">
@@ -98,7 +118,7 @@
             <input id="on_adopt" type="number" step="100" value="3000" disabled />
           </div>
         </div>
-        <p class="note">One-time totals are shown separately. For budgeting, divide by 12 to approximate an annualized monthly impact.</p>
+        <p class="note">Note ...</p>
       </fieldset>
 
       <fieldset>
@@ -168,7 +188,6 @@
         </div>
       </div>
     </div>
-    <!-- END original estimator HTML -->
 
   </section>
 </main>
