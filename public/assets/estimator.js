@@ -28,7 +28,7 @@
       copyLink: 'Copy shareable link',
       licenseLabels: {
         '57': 'Microsoft 365 E5',
-        '23': 'Microsoft 365 Business Premium',
+        '23': 'Microsoft 365 BP',
         default: 'Microsoft 365 E3'
       },
       quoteSubject: (ppl, license) => `Quote request — ${ppl} ppl — ${license}`,
@@ -48,7 +48,7 @@
       copyLink: 'Link kopieren',
       licenseLabels: {
         '57': 'Microsoft 365 E5',
-        '23': 'Microsoft 365 Business Premium',
+        '23': 'Microsoft 365 BP',
         default: 'Microsoft 365 E3'
       },
       quoteSubject: (ppl, license) => `Angebotsanfrage — ${ppl} Pers. — ${license}`,
