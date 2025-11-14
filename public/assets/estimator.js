@@ -16,9 +16,9 @@
   const T = {
     en: {
       scenarioNotes: {
-        productivity: 'Higher M365 focus; modest Azure & AI experiments.',
-        dataai: 'Stronger Azure (incl. ops) and Azure OpenAI usage.',
-        citdev: 'Power Platform premium to empower makers; balanced Azure.'
+        productivity: 'M365 Focus',
+        citdev: 'Powerplatform Focus',
+        dataai: 'Azure Focus',
       },
       copySuccess: 'Link copied to clipboard',
       copyFail: 'Copy failed — copy the URL manually',
@@ -36,9 +36,9 @@
     },
     de: {
       scenarioNotes: {
-        productivity: 'Stärkerer Fokus auf M365; moderate Azure- & AI-Experimente.',
-        dataai: 'Größerer Azure-Anteil (inkl. Betrieb) und Azure OpenAI Nutzung.',
-        citdev: 'Power Platform Premium für Maker; ausgewogenes Azure.',
+        productivity: 'M365-Fokus',
+        citdev: 'Powerplatform-Fokus',
+        dataai: 'Azure-Fokus',
       },
       copySuccess: 'Link in Zwischenablage kopiert',
       copyFail: 'Kopieren fehlgeschlagen — URL bitte manuell kopieren',
