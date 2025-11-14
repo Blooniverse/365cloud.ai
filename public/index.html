@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  sosa: http://www.w3.org/ns/sosa/ ssn: http://www.w3.org/ns/ssn/ xsd: http://www.w3.org/2001/XMLSchema# vcard: http://www.w3.org/2006/vcard/ns# ">
-<!-- Max 512 Bytes -->
-<!-- @see W3.org/2011/rdfa-context/rdfa-1.1 W3.org/TR/rdfa-primer -->
-
-
-
-
+<html lang="de" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/...">
 
 <head>
 
@@ -96,9 +90,9 @@
     <a href="/de/project-power/">Projekt Power</a>
     <a href="/de/blog/">Blog</a>
     <a href="/de/imprint/">Impressum</a>
-    <hr style="border:1px solid var(--line);border-width:0 0 1px;margin:.5rem 0" />
+    <hr class="hr-divider" />
     <label class="switch"><input id="themeToggle" type="checkbox"/> Helles Design</label>
-    <div style="margin-top:.5rem;">
+    <div class="lang-block">
       <strong>Sprache</strong>
       <div class="lang-switch">
         <button data-lang="de" class="lang-btn">DE</button>
@@ -108,9 +102,9 @@
   </nav>
 </aside>
 
-<main class="container" style="padding:2rem 0;">
+<main class="container main-padding-large">
   <section>
-    <h3 style="margin:0 0 .6rem;">Kostenschätzer&thinsp;&#x27F4;</h3>
+    <h3 class="h3-tight">Kostenschätzer&thinsp;&#x27F4;</h3>
     <div class="calc">
       <div class="grid-3">
         <div class="row">
@@ -197,7 +191,7 @@
         <div class="total"><strong>Total Monat (wiederkehrend):</strong> <span id="totalMonthly"></span></div>
         <div><strong>Total Jahr (wiederkehrend):</strong> <span id="totalYearly"></span></div>
         <div class="muted">Pro Benutzer & Monat: <span id="perUser"></span></div>
-        <div style="margin-top:.6rem;"><strong>Total Onetime-Services:</strong> <span id="onetimeTotal"></span></div>
+        <div class="muted-small"><strong>Total Onetime-Services:</strong> <span id="onetimeTotal"></span></div>
         <div class="actions">
           <button class="btn" id="copyLink">Konfiguration teilen</button>
           <button class="btn secondary" id="askQuote">Angebot erfragen</button>
@@ -215,7 +209,7 @@
                 <label for="q_last">Nachname</label>
                 <input type="text" id="q_last" required />
               </div>
-              <div class="row" style="grid-column:1 / span 2;">
+              <div class="row">
                 <label for="q_email">Email</label>
                 <input type="email" id="q_email" required />
               </div>
@@ -231,7 +225,7 @@
   </section>
 </main>
 
-<aside class="container" style="padding:1rem 0 2rem;">
+<aside class="container aside-padding">
   <p class="note">Hinweis: Produktnamen werden nur beschreibend erwähnt; 365cloud.ai ist unabhängig und nicht mit Microsoft verbunden.</p>
 </aside>
 
