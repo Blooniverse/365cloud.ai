@@ -68,34 +68,34 @@
 
   function applyScenario(val){
     if(val==='microsoft_m365'){
-      $("azAll").value = 24.00;
-      $("co365_chk").checked = true;  $("co365").value = 30;
-      $("pp_chk").checked = false;    $("pp").value = fmt(18);
-      $("aoai_chk").checked = false;  $("aoai").value = 8;
-      $("on_tenant_chk").checked = true; $("on_tenant").value = 4500;
-      $("on_lz_chk").checked = false; $("on_lz").value = 6500;
-      $("on_coe_chk").checked = false; $("on_coe").value = 4000;
-      $("on_adopt_chk").checked = true; $("on_adopt").value = 3000;
+      $("azAll").value = (24.00).toFixed(2);
+      $("co365_chk").checked = true;  $("co365").value = (30).toFixed(2);
+      $("pp_chk").checked = false;    $("pp").value = (18).toFixed(2);
+      $("aoai_chk").checked = false;  $("aoai").value = (8).toFixed(2);
+      $("on_tenant_chk").checked = true; $("on_tenant").value = (4500).toFixed(2);
+      $("on_lz_chk").checked = false; $("on_lz").value = (6500).toFixed(2);
+      $("on_coe_chk").checked = false; $("on_coe").value = (4000).toFixed(2);
+      $("on_adopt_chk").checked = true; $("on_adopt").value = (3000).toFixed(2);
     }
     if(val==='microsoft_azure'){
-      $("azAll").value = 38;
-      $("co365_chk").checked = true;  $("co365").value = 30;
-      $("pp_chk").checked = false;    $("pp").value = 18;
-      $("aoai_chk").checked = true;   $("aoai").value = 12;
-      $("on_tenant_chk").checked = true; $("on_tenant").value = 4500;
-      $("on_lz_chk").checked = true;  $("on_lz").value = 6500;
-      $("on_coe_chk").checked = false; $("on_coe").value = 4000;
-      $("on_adopt_chk").checked = true; $("on_adopt").value = 4000;
+      $("azAll").value = (38).toFixed(2);
+      $("co365_chk").checked = true;  $("co365").value = (30).toFixed(2);
+      $("pp_chk").checked = false;    $("pp").value = (18).toFixed(2);
+      $("aoai_chk").checked = true;   $("aoai").value = (12).toFixed(2);
+      $("on_tenant_chk").checked = true; $("on_tenant").value = (4500).toFixed(2);
+      $("on_lz_chk").checked = true;  $("on_lz").value = (6500).toFixed(2);
+      $("on_coe_chk").checked = false; $("on_coe").value = (4000).toFixed(2);
+      $("on_adopt_chk").checked = true; $("on_adopt").value = (4000).toFixed(2);
     }
     if(val==='microsoft_powerplatform'){
-      $("azAll").value = 28;
-      $("co365_chk").checked = true;  $("co365").value = 30;
-      $("pp_chk").checked = true;     $("pp").value = 18;
-      $("aoai_chk").checked = false;  $("aoai").value = 10;
-      $("on_tenant_chk").checked = true; $("on_tenant").value = 4500;
-      $("on_lz_chk").checked = false; $("on_lz").value = 6500;
-      $("on_coe_chk").checked = true;  $("on_coe").value = 4000;
-      $("on_adopt_chk").checked = true; $("on_adopt").value = 3500;
+      $("azAll").value = (28).toFixed(2);
+      $("co365_chk").checked = true;  $("co365").value = (30).toFixed(2);
+      $("pp_chk").checked = true;     $("pp").value = (18).toFixed(2);
+      $("aoai_chk").checked = false;  $("aoai").value = (10).toFixed(2);
+      $("on_tenant_chk").checked = true; $("on_tenant").value = (4500).toFixed(2);
+      $("on_lz_chk").checked = false; $("on_lz").value = (6500).toFixed(2);
+      $("on_coe_chk").checked = true;  $("on_coe").value = (4000).toFixed(2);
+      $("on_adopt_chk").checked = true; $("on_adopt").value = (3500).toFixed(2);
     }
 
     ['co365_chk','pp_chk','aoai_chk','on_tenant_chk','on_lz_chk','on_coe_chk','on_adopt_chk'].forEach(chk=>{
@@ -286,7 +286,7 @@
 
       const subject = encodeURIComponent(tr.quoteSubject(st.ppl, licenseLabel));
       const body = encodeURIComponent(lines.join('\n'));
-      window.location.href = `mailto:adm.quote@365cloud.ai?subject=${subject}&body=${body}`;
+      window..href = `mailto:adm.quote@365cloud.ai?subject=${subject}&body=${body}`;
     });
   }
 
