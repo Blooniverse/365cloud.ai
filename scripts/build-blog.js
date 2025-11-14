@@ -63,7 +63,6 @@ function pageHeader({ title, pageUrl, description, lang = 'en' }){
   <link rel="alternate" type="application/rss+xml" href="/blog/${lang}/feed.xml" title="365cloud.ai Blog RSS (${lang})" />
   <link rel="stylesheet" href="/assets/site.css" />
   <script src="/assets/site.js" defer></script>
-  <script src="/assets/structured-data.js" defer></script>
   <script type="application/ld+json">${JSON.stringify(webPageLd)}</script>
 </head>
 <body itemscope itemtype="http://schema.org/WebSite" typeof="schema:WebSite">
@@ -71,7 +70,7 @@ function pageHeader({ title, pageUrl, description, lang = 'en' }){
     <button id="menuBtn" aria-controls="drawer" aria-expanded="false" aria-label="Open menu">☰</button>
     <span class="pill">${escapeXml(L.siteName)}</span>
     <h1>${escapeXml(title)}</h1>
-    ${description? `<h2 style="margin:.25rem 0 0; font-weight:500; color:var(--muted);">${escapeXml(description)}</h2>`: ''}
+    ${description? `<h2 class="h2-subtle">${escapeXml(description)}</h2>`: ''}
   </header>
   <div id="scrim" class="scrim" hidden></div>
   <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Site menu">
@@ -80,9 +79,9 @@ function pageHeader({ title, pageUrl, description, lang = 'en' }){
       <a href="/${lang}/project-power/"> ${L.projectPower}</a>
       <a href="/${lang}/blog/"> ${L.blog}</a>
       <a href="/${lang}/imprint/"> ${L.imprint}</a>
-      <hr style="border:1px solid var(--line);border-width:0 0 1px;margin:.5rem 0" />
+      <hr class="hr-divider" />
       <label class="switch"><input id="themeToggle" type="checkbox"/> ${L.lightMode}</label>
-      <div style="margin-top:.5rem;">
+      <div class="lang-block">
         <strong>Language</strong>
         <div class="lang-switch">
           <button data-lang="de" class="lang-btn">DE</button>
@@ -91,7 +90,7 @@ function pageHeader({ title, pageUrl, description, lang = 'en' }){
       </div>
     </nav>
   </aside>
-  <main class="container" style="padding:1.5rem 0;">`;}
+  <main class="container main-padding-medium">`;}
 
 function pageFooter(){
   return `
