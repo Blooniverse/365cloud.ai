@@ -1,7 +1,7 @@
 (function(){
   const $ = (id) => document.getElementById(id);
   const CHF = new Intl.NumberFormat('de-CH',{style:'currency',currency:'CHF',maximumFractionDigits:2});
-  const fmt = (n) => CHF.format(Math.round(n));
+  const fmt = (n) => CHF.format(n);
 
   // Determine language from path or saved preference; default to 'de' as requested.
   function detectLang(){
@@ -277,16 +277,16 @@
       lines.push((LANG === 'de' ? `  Adoption & Training: ${st.ade? 'AN' : 'aus'} (CHF ${st.ad})` : `  Adoption & training: ${st.ade? 'ON' : 'off'} (CHF ${st.ad})`));
       lines.push('');
       lines.push((LANG === 'de' ? 'Berechnete Summen:' : 'Computed totals:'));
-      lines.push(`  ${LANG === 'de' ? 'Monatlich total (laufend):' : 'Total monthly (recurring):'} CHF ${Math.round(totalMonthly)}`);
-      lines.push(`  ${LANG === 'de' ? 'Jährlich total (laufend):' : 'Total yearly (recurring):'} CHF ${Math.round(totalYearly)}`);
-      lines.push(`  ${LANG === 'de' ? 'Pro Benutzer monatlich:' : 'Per-user monthly (recurring):'} CHF ${Math.round(perUser)}`);
-      lines.push(`  ${LANG === 'de' ? 'Einmalig total:' : 'One-time total:'} CHF ${Math.round(oneTimeTotal)}`);
+      lines.push(`  ${LANG === 'de' ? 'Monatlich total (laufend):' : 'Total monthly (recurring):'} ${fmt(totalMonthly)}`);
+      lines.push(`  ${LANG === 'de' ? 'Jährlich total (laufend):' : 'Total yearly (recurring):'} ${fmt(totalYearly)}`);
+      lines.push(`  ${LANG === 'de' ? 'Pro Benutzer monatlich:' : 'Per-user monthly (recurring):'} ${fmt(perUser)}`);
+      lines.push(`  ${LANG === 'de' ? 'Einmalig total:' : 'One-time total:'} ${fmt(oneTimeTotal)}`);
       lines.push('');
       lines.push(`${LANG === 'de' ? 'Link zum Teilen:' : 'Shareable link:'} ${location.href}`);
 
       const subject = encodeURIComponent(tr.quoteSubject(st.ppl, licenseLabel));
       const body = encodeURIComponent(lines.join('\n'));
-      window..href = `mailto:adm.quote@365cloud.ai?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:adm.quote@365cloud.ai?subject=${subject}&body=${body}`;
     });
   }
 
