@@ -15,42 +15,32 @@
   // Translations for JS-driven messages and dynamic labels
   const T = {
     en: {
-      scenarioNotes: {
-        microsoft_m365: 'M365 Focus',
-        microsoft_powerplatform: 'Powerplatform Focus',
-        microsoft_azure: 'Azure Focus',
+      licenseLabels: {
+        'microsoft365_license_e5': 'Microsoft 365 E5',
+        'microsoft365_license_bp': 'Microsoft 365 BP',
+        default: 'Microsoft 365 E3'
       },
+      copyLink: 'Copy shareable link',
       copySuccess: 'Link copied to clipboard',
       copyFail: 'Copy failed — copy the URL manually',
       fillForm: 'Please complete all fields.',
       submitBtn: 'Submit & prepare email',
       askQuote: 'Ask for quote',
-      copyLink: 'Copy shareable link',
+      quoteSubject: (ppl, license) => `Quote request — ${ppl} ppl — ${license}`,
+      noteEmail: 'Your email app will open with all details prefilled. No data is stored server-side.'
+    },
+    de: {
       licenseLabels: {
         'microsoft365_license_e5': 'Microsoft 365 E5',
         'microsoft365_license_bp': 'Microsoft 365 BP',
         default: 'Microsoft 365 E3'
       },
-      quoteSubject: (ppl, license) => `Quote request — ${ppl} ppl — ${license}`,
-      noteEmail: 'Your email app will open with all details prefilled. No data is stored server-side.'
-    },
-    de: {
-      scenarioNotes: {
-        microsoft_m365: 'M365-Fokus',
-        microsoft_powerplatform: 'Powerplatform-Fokus',
-        microsoft_azure: 'Azure-Fokus',
-      },
+      copyLink: 'Link kopieren',
       copySuccess: 'Link in Zwischenablage kopiert',
       copyFail: 'Kopieren fehlgeschlagen — URL bitte manuell kopieren',
       fillForm: 'Bitte alle Felder ausfüllen.',
       submitBtn: 'Absenden & E‑Mail vorbereiten',
       askQuote: 'Angebot anfragen',
-      copyLink: 'Link kopieren',
-      licenseLabels: {
-        'microsoft365_license_e5': 'Microsoft 365 E5',
-        'microsoft365_license_bp': 'Microsoft 365 BP',
-        default: 'Microsoft 365 E3'
-      },
       quoteSubject: (ppl, license) => `Angebotsanfrage — ${ppl} Pers. — ${license}`,
       noteEmail: 'Ihr E‑Mail-Programm öffnet sich mit allen Details. Es werden keine Daten serverseitig gespeichert.'
     }
@@ -77,9 +67,6 @@
   }
 
   function applyScenario(val){
-    const notes = tr.scenarioNotes;
-    $("scenarioNote").textContent = notes[val] || '';
-    // update recommended defaults per scenario (matching original behavior)
     if(val==='microsoft_m365'){
       $("azAll").value = 24;
       $("co365_chk").checked = true;  $("co365").value = 30;
@@ -269,7 +256,7 @@
       const licensePrice = getLicensePrice(st.lic);
 
       const lines = [];
-      if(LANG === 'de') lines.push('Anfrage aus dem 365cloud.ai Schätzer'); else lines.push('Quote request from 365cloud.ai estimator');
+      if(LANG === 'de') lines.push('Anfrage 365cloud.ai'); else lines.push('Quote 365cloud.ai');
       lines.push('');
       lines.push((LANG === 'de' ? `Kunde: ${first} ${last}` : `Client: ${first} ${last}`));
       lines.push((LANG === 'de' ? `E-Mail: ${email}` : `Email: ${email}`));
