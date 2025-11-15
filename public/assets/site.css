@@ -17,8 +17,21 @@
 }
 
 *{box-sizing:border-box}
+
 html,body{height:100%}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans',sans-serif;background:var(--bg);color:var(--fg);line-height:1.55}
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+body{
+  margin: 0;
+  font-family: "Titillium Web", system-ui, Aptos, "Segoe UI", Arial, "Liberation Sans", Ubuntu, Cantarell, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.55;
+}
 
 /* Layout */
 .container{max-width:1024px;margin:0 auto;padding:0 1rem}
