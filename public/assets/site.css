@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 /* Base themes */
 :root{
   --bg:#0e1117; --fg:#e6edf3; --muted:#9da7b3; --brand:#61dafb; --card:#151a23; --accent:#00c2ff;
@@ -19,8 +21,6 @@
 *{box-sizing:border-box}
 
 html,body{height:100%}
-
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 body{
   margin: 0;
