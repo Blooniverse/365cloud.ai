@@ -112,3 +112,52 @@ button:disabled{opacity:.6;cursor:not-allowed}
 .toast-fixed { position: fixed; bottom: 2rem; right: 2rem; padding: 1rem; background: #333; color: #fff; border-radius: 8px; display: none; }
 .lang-block { margin-top: .5rem; }
 .aside-padding { padding: 1rem 0 2rem; }
+
+/* Totals section styling */
+.totals-section {
+  background: color-mix(in srgb, var(--bg) 80%, #000 20%);
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.total-item {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.total-item:last-child {
+  margin-bottom: 0;
+}
+
+.total-monthly {
+  color: #AF43CD;
+}
+
+/* Accordion styles for fieldsets */
+fieldset {
+  position: relative;
+}
+
+fieldset legend {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+fieldset legend::after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  transition: transform 0.2s ease;
+}
+
+fieldset.collapsed legend::after {
+  transform: rotate(-90deg);
+}
+
+fieldset.collapsed > :not(legend) {
+  display: none;
+}
