@@ -52,7 +52,7 @@ main {
   border:1px solid #1c2330;
   border-color:var(--border)
 }
-input#people, select#license {
+select#scenario, select#license {
   background: var(--fg);
   color: var(--bg);
   border-color: var(--line);
