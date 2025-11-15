@@ -193,11 +193,10 @@
     const oneAdopt  = $("on_adopt_chk").checked ? Number($("on_adopt").value) : 0;
     const oneTimeTotal = oneTenant + oneLz + oneCoe + oneAdopt;
 
-    $("totalMonthly").textContent = fmt(totalMonthly);
-    $("totalYearly").textContent = fmt(totalYearly);
     $("onetimeTotal").textContent = fmt(oneTimeTotal);
+    $("totalYearly").textContent = fmt(totalYearly);
 
-    return { totalMonthly, totalYearly, perUser, oneTimeTotal };
+    return { oneTimeTotal, totalYearly };
   }
 
   // setup toggles and inputs
