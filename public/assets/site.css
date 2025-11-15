@@ -47,10 +47,10 @@ main {
   background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 20%, transparent 80%), transparent 50%);
   border-color: color-mix(in srgb, var(--brand) 35%, var(--line) 65%);
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  padding: 1.25rem;
+  padding: 1rem;
   border-radius: .6rem;
   border: 1px solid #1c2330;
-  border-color: var(--border)
+  border-color: var(--border);
 }
 select#scenario, select#license {
   background: color-mix(in srgb, var(--fg) 80%, transparent 20%);
@@ -125,8 +125,6 @@ button:disabled{opacity:.6;cursor:not-allowed}
   margin: .5rem 0;
 }
 .mt-05 { margin-top: .5rem; }
-.main-padding-large { padding: 2rem 0; }
-.main-padding-medium { padding: 1.5rem 0; }
 .h3-tight { margin: 0 0 .6rem; }
 .h2-subtle { margin: .25rem 0 0; font-weight: 500; color: var(--muted); }
 .card { margin-top: 2rem; padding: 1rem; background: var(--card-bg, #f9f9f9); border-radius: 8px; }
@@ -136,7 +134,7 @@ button:disabled{opacity:.6;cursor:not-allowed}
 .muted-small { margin-top: .5rem; font-size: .85rem; }
 .toast-fixed { position: fixed; bottom: 2rem; right: 2rem; padding: 1rem; background: #333; color: #fff; border-radius: 8px; display: none; }
 .lang-block { margin-top: .5rem; }
-.aside-padding { padding: 1rem 0 2rem; }
+/** .aside-padding { padding: 1rem 0 2rem; } **/
 
 /* Totals section styling */
 .totals-section {
