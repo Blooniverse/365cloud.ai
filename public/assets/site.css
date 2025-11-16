@@ -54,7 +54,7 @@ select#scenario, select#license, select > option {
   background: color-mix(in hsl, var(--fg) 100%, transparent 90%);
   color: var(--bg);
   border-color: var(--line);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* Calculator */
