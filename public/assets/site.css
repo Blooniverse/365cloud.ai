@@ -44,14 +44,14 @@ a:hover{text-decoration:underline}
 
 main {
   background: hsla(0,0%,0%, 0.2);
-  border-color: color-mix(in srgb, var(--brand) 35%, var(--line) 65%);
+  border-color: color-mix(in hsl, var(--brand) 35%, var(--line) 65%);
   box-shadow: 0 0 0.8rem 0.6rem var(--pill-bg), 0.6rem 0.6rem 3rem 1rem hsla(0,0%,0%, 0.3);
   padding: 1rem;
   border-radius: .6rem;
   border: 1px dotted var(--line);
 }
 select#scenario, select#license {
-  background: color-mix(in srgb, var(--fg) 100%, transparent 90%);
+  background: color-mix(in hsl, var(--fg) 100%, transparent 90%);
   color: var(--bg);
   border-color: var(--line);
 }
