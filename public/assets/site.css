@@ -115,7 +115,6 @@ fieldset legend {
   padding-right: 1.5rem;
   color: var(--fg-pill);
   opacity: 0.9;
-  padding: 0 0.25rem;
 }
 fieldset legend::after {
   content: '▼';
