@@ -1,7 +1,7 @@
 /* Base themes */
 :root{
-  --bg:hsla(202,80%,15%, 1); --fg:#e6edf3; --muted:#9da7b3; --brand:#61dafb; --card:#151a23; --accent:#00c2ff;
-  --border:#222a35; --line:#263044; --pill-bg:#0b3d4b; --pill-fg:#c7f1ff;
+  --bg:hsla(202,80%,15%, 1); --fg:hsla(202,35%,93%, 1); --muted:hsla(213,13%,66%, 1); --brand:hsla(194,95%,70%, 1); --card:hsla(202,25%,10%, 1); --accent:hsla(194,100%,50%, 1);
+  --border:hsla(202,20%,15%, 1); --line:hsla(202,30%,21%, 1); --pill-bg:hsla(194,75%,20%); --pill-fg:hsla(194,100%,90%, 1);
 }
 /* Light theme variables */
 :root[data-theme="light"]{
