@@ -42,7 +42,7 @@ footer {background: linear-gradient(000deg, color-mix(in hsl, var(--brand) 20%, 
 
 h1{margin:0 0 0.5rem; font-size:2rem}
 h2{margin:0.25rem 0 0; font-weight:600; color:var(--muted)}
-h3.h3-tight { margin-bottom: 0.6rem; }
+h3.h3-tight { margin: 0rem 0rem 0.6rem; }
 a{color:var(--brand);text-decoration:none}
 a:hover{text-decoration:underline}
 
