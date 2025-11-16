@@ -52,7 +52,7 @@ main {
   box-shadow: 0 0 0.8rem 0.6rem var(--pill-bg), 0.6rem 0.6rem 3rem 1rem hsla(0,0%,0%, 0.3);
   padding: 1rem;
   border-radius: .6rem;
-  border: 1px dotted var(--line);
+  border: 1px solid var(--line);
 }
 select#scenario, select#license, select > option {
   background: color-mix(in hsl, var(--fg) 100%, transparent 90%);
