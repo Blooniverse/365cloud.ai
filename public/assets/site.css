@@ -95,7 +95,8 @@ input[type=number], input[type=email], input[type=text], select {
   margin-bottom: 1rem;
 }
 .total-item {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 500;
   margin-bottom: 0.4rem;
 }
 .total-item:last-child {
