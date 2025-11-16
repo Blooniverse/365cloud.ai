@@ -35,10 +35,11 @@ body{
 /* Layout */
 .container {max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem; }
 header {background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 30%, transparent 70%), transparent 70%); padding-bottom: 1rem; }
-footer {background: linear-gradient(000deg, color-mix(in srgb, var(--brand) 20%, transparent 80%), transparent 80%); font-size:.95rem; color:var(--muted); }
+footer {background: linear-gradient(000deg, color-mix(in srgb, var(--brand) 20%, transparent 80%), transparent 80%); color:var(--muted); }
 .pill{display:inline-block;padding:.2rem .6rem;border-radius:999px;background:var(--pill-bg);color:var(--pill-fg);font-size:.85rem;margin-bottom:1rem}
 h1{margin:0 0 0.5rem; font-size:2rem}
 h2{margin:0.25rem 0 0; font-weight:600; color:var(--muted)}
+h3.h3-tight { margin-bottom: 0.6rem; }
 a{color:var(--brand);text-decoration:none}
 a:hover{text-decoration:underline}
 
@@ -176,10 +177,8 @@ button:disabled{opacity:.6;cursor:not-allowed}
   border-bottom: 1px solid var(--line);
   margin: .5rem 0;
 }
-.h3-tight { margin: 0 0 .6rem; }
 .card { margin-top: 2rem; padding: 1rem; background: var(--card-bg, #f9f9f9); border-radius: 8px; }
 .actions-row { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 .actions-row .btn { flex: 1; min-width: 200px; }
 .form-card { padding: 1rem; background: var(--card-bg, #f9f9f9); border-radius: 8px; }
-.muted-small { margin-top: .5rem; font-size: .85rem; }
 .lang-block { margin-top: .5rem; }
