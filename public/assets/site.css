@@ -63,9 +63,9 @@ select#scenario, select#license, select > option {
 
 /* Calculator */
 .calc{display:grid;grid-template-columns:1fr;gap:1rem}
-.row{display:grid;gap:.6rem}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.row { display:grid; gap: 0.3rem; }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom: 0.5rem; }
+.grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; }
 label{color:#cbd6e0;color:var(--muted);font-size:.95rem}
 input[type=range] {width:100%}
 input[type=number], input[type=email], input[type=text], select {
