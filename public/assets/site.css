@@ -18,14 +18,14 @@
 :root[data-theme="light"] {
   /* Visual Properties */
   --fg: hsla(202, 95%, 25%, 1);
-  --bg: hsla(202, 20%, 25%, 1);
+  --bg: hsla(202, 20%, 95%, 1);
   --line: hsla(202, 30%, 70%, 1);
   --muted: hsla(202, 10%, 10%, 1);
   --pill-fg: hsla(194, 70%, 10%, 1);
   --pill-bg: hsla(194, 100%, 95%, 1);
   --brand: hsla(194, 100%, 40%, 1);
   --accent: hsla(322, 70%, 40%, 0.4);
-  --card: hsla(322, 35%, 10%, 0.7);
+  --card: hsla(322, 20%, 95%, 0.7);
 }
 
 /* Respect user preference by default */
