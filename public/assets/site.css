@@ -17,8 +17,8 @@
 /* Theme: light */
 :root[data-theme="light"] {
   /* Visual Properties */
-  --fg: hsla(202, 95%, 0%, 1);
-  --bg: hsla(202, 30%, 95%, 1);
+  --fg: hsla(202, 95%, 25%, 1);
+  --bg: hsla(202, 20%, 25%, 1);
   --line: hsla(202, 30%, 70%, 1);
   --muted: hsla(202, 10%, 10%, 1);
   --pill-fg: hsla(194, 70%, 10%, 1);
