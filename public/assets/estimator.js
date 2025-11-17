@@ -310,18 +310,7 @@
       }
     });
 
-    // Move actions div above quotePanel
-    /**
-    const actions = document.querySelector('.actions');
-    const quotePanel = $('quotePanel');
-    const outDiv = $('out');
-    if (actions && quotePanel && outDiv) {
-      // Remove actions from its current position
-      actions.remove();
-      // Insert it before quotePanel
-      outDiv.insertBefore(actions, quotePanel);
-    }
-    **/
   })();
+
 
 })();
