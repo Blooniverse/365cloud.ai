@@ -103,6 +103,8 @@ h2, p.h2-page {
   font-size: 1.5rem;
   font-weight: 600;
   font-variant: small-caps;
+}
+header h2, header p.h2-page {
   color: var(--muted);
 }
 h3.h3-tight {
