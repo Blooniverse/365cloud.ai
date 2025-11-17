@@ -17,15 +17,15 @@
 /* Theme: light */
 :root[data-theme="light"] {
   /* Visual Properties */
-  --fg: hsla(202, 90%, 0%, 1);
-  --bg: hsla(202, 50%, 90%, 1);
-  --line: hsla(202, 29%, 84%, 1);
-  --muted: hsla(202, 11%, 40%, 1);
-  --pill-fg: hsla(194, 100%, 22%, 1);
+  --fg: hsla(202, 95%, 0%, 1);
+  --bg: hsla(202, 30%, 95%, 1);
+  --line: hsla(202, 30%, 70%, 1);
+  --muted: hsla(202, 10%, 40%, 1);
+  --pill-fg: hsla(194, 100%, 30%, 1);
   --pill-bg: hsla(194, 100%, 95%, 1);
-  --brand: hsla(194, 100%, 36%, 1);
-  --accent: hsla(322, 100%, 40%, 1);
-  --card: hsla(322, 0%, 100%, 1);
+  --brand: hsla(194, 100%, 40%, 1);
+  --accent: hsla(322, 90%, 40%, 0.6);
+  --card: hsla(322, 35%, 10%, 0.7);
 }
 
 /* Respect user preference by default */
