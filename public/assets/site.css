@@ -92,6 +92,7 @@ h1 {
   margin: 0 0 0.5rem;
   /* Typography */
   font-size: 2rem;
+  font-variant: small-caps;
 }
 h2 {
   /* Box Model */
