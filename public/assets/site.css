@@ -94,8 +94,8 @@ select:focus-visible {
   padding: 0.5rem; 
 }
 .muted{color:var(--muted)}
-.note{font-size:.9rem;color:#9da7b3;color:var(--muted)}
-#scenarioNote {display:none}
+.note{font-size:.9rem;color:var(--fg);color:var(--muted)}
+#scenarioNote, #licenseNote {display:none}
 .actions{display:flex;gap:.5rem;align-items:center;margin:.5rem 0 0;flex-wrap:wrap}
 .toast { color:--var(pill-fg); }
 
@@ -287,23 +287,9 @@ button#askQuote, button[type=submit] {background: var(--accent); }
   border-bottom: 1px solid var(--line);
   margin: .5rem 0;
 }
-
 .actions-row { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 .actions-row .btn { flex: 1; min-width: 200px; }
 .lang-block { margin-top: .5rem; }
-
-/* Screen reader only class */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
 
 /* Focus visible polyfill support */
 :focus {
