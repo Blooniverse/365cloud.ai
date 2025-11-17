@@ -311,6 +311,7 @@
     });
 
     // Move actions div above quotePanel
+    /**
     const actions = document.querySelector('.actions');
     const quotePanel = $('quotePanel');
     const outDiv = $('out');
@@ -320,6 +321,7 @@
       // Insert it before quotePanel
       outDiv.insertBefore(actions, quotePanel);
     }
+    **/
   })();
 
 })();
