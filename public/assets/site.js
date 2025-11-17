@@ -1,78 +1,68 @@
-(function(){
-  const qs = (s)=>document.querySelector(s);
-  const drawer = qs('#drawer');
-  const scrim = qs('#scrim');
-  const btn = qs('#menuBtn');
-  const themeToggle = qs('#themeToggle');
+// Enhanced focus management
 
-  function open(){ drawer.classList.add('open'); scrim.classList.add('open'); btn.setAttribute('aria-expanded','true'); drawer.setAttribute('aria-hidden','false'); }
-  function close(){ drawer.classList.remove('open'); scrim.classList.remove('open'); btn.setAttribute('aria-expanded','false'); drawer.setAttribute('aria-hidden','true'); }
-  btn && btn.addEventListener('click', ()=> drawer.classList.contains('open') ? close() : open());
-  scrim && scrim.addEventListener('click', close);
-  window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+// Focus trap for modal dialogs
+function trapFocus(element) {
+    const focusableElements = element.querySelectorAll('a, area, button, iframe, object, select, textarea, [tabindex]:not([tabindex="-1"]), [contenteditable]');
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
 
-  const STORAGE_THEME = 'theme';
-  const STORAGE_LANG = 'lang';
+    firstElement.focus();
 
-  function applyTheme(t){ if(!t){ document.documentElement.removeAttribute('data-theme'); return; } document.documentElement.setAttribute('data-theme', t); }
-  function currentPref(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
-  const saved = localStorage.getItem(STORAGE_THEME);
-  applyTheme(saved || '');
-  if(themeToggle){
-    const active = (saved ? saved : '').toLowerCase() || '';
-    const effective = active || currentPref();
-    themeToggle.checked = (effective === 'light');
-    themeToggle.addEventListener('change', ()=>{
-      const t = themeToggle.checked ? 'light' : 'dark';
-      localStorage.setItem(STORAGE_THEME, t);
-      applyTheme(t);
-    });
-  }
-
-  // Language handling: simple buttons with data-lang attribute inside drawer
-  function currentLangDefault(){
-    // do not default to 'de' if no saved value — return only explicit saved preference
-    return localStorage.getItem(STORAGE_LANG);
-  }
-  function setLang(lang){
-    if(!lang) return;
-    localStorage.setItem(STORAGE_LANG, lang);
-  }
-
-  // Wire buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const lang = btn.getAttribute('data-lang');
-      if(!lang) return;
-      setLang(lang);
-
-      // Attempt to preserve the rest of the path. Replace leading /de/ or /en/ with the new lang.
-      const path = window.location.pathname;
-      const parts = path.split('/').filter(Boolean); // removes leading/trailing slashes
-      // If first segment is a language code, replace it; otherwise prefix with new lang
-      if(parts[0] === 'de' || parts[0] === 'en'){
-        parts[0] = lang;
-      } else {
-        parts.unshift(lang);
-      }
-      const newPath = '/' + parts.join('/') + (path.endsWith('/') ? '/' : '');
-      window.location.href = newPath;
-    });
-  });
-
-  // On load, if saved lang differs from path, navigate (but avoid redirect loops)
-  (function syncOnLoad(){
-    const saved = currentLangDefault();
-    const path = window.location.pathname;
-    const parts = path.split('/').filter(Boolean);
-    const pathLang = parts[0] === 'de' || parts[0] === 'en' ? parts[0] : null;
-    if(!pathLang && saved){
-      // prefix path with saved
-      const newPath = '/' + [saved].concat(parts).join('/') + (path.endsWith('/') ? '/' : '');
-      if(newPath !== path) window.location.replace(newPath);
-    } else if(pathLang && saved && pathLang !== saved){
-      // prefer explicit path language over saved; keep saved but don't auto-redirect away from explicit path
-      // (no action)
+    function handleKeyDown(e) {
+        if (e.key === 'Tab') {
+            if (e.shiftKey) { // shift + tab
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else { // tab
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
     }
-  })();
-})();
+
+    element.addEventListener('keydown', handleKeyDown);
+    return () => element.removeEventListener('keydown', handleKeyDown);
+}
+
+// Focus restoration when drawer closes
+function restoreFocus(previousFocus) {
+    if (previousFocus) {
+        previousFocus.focus();
+    }
+}
+
+// Aria-live feedback for language changes
+function updateLanguageFeedback() {
+    const status = document.getElementById('language-status');
+    status.textContent = 'Language changed!';
+    status.setAttribute('aria-live', 'polite');
+}
+
+// Dynamic range input aria attributes
+function setupRangeInput(element) {
+    const min = element.getAttribute('min');
+    const max = element.getAttribute('max');
+    element.setAttribute('aria-valuemin', min);
+    element.setAttribute('aria-valuemax', max);
+    element.addEventListener('input', function() {
+        const value = this.value;
+        this.setAttribute('aria-valuenow', value);
+    });
+}
+
+// Example usage
+const drawer = document.getElementById('drawer');
+const previousFocus = document.activeElement;
+const focusTrapCleanup = trapFocus(drawer);
+
+drawer.addEventListener('close', () => {
+    focusTrapCleanup();
+    restoreFocus(previousFocus);
+});
+
+const rangeInput = document.getElementById('range-input');
+setupRangeInput(rangeInput);
