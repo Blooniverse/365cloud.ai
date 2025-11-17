@@ -100,7 +100,7 @@ h2, p.h2-page {
   /* Box Model */
   margin: 0.25rem 0 0;
   /* Typography */
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   font-variant: small-caps;
   color: var(--muted);
