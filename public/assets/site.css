@@ -92,15 +92,17 @@ h1, p.h1-page {
   margin: 0 0 0.5rem;
   /* Typography */
   font-size: 2rem;
+  font-weight: 800;
   font-variant: small-caps;
 }
 h2, p.h2-page {
   /* Box Model */
   margin: 0.25rem 0 0;
   /* Typography */
-  color: var(--muted);
+  font-size: 1.7rem;
   font-weight: 600;
   font-variant: small-caps;
+  color: var(--muted);
 }
 h3.h3-tight {
   /* Box Model */
