@@ -125,6 +125,7 @@ a:focus-visible {
   /* Typography */
   color: var(--muted);
   font-size: .9rem;
+  font-style: italic;
 }
 
 /* --- Layout & Containers --- */
