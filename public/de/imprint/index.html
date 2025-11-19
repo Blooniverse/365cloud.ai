@@ -23,11 +23,22 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://365cloud.ai/#organization",
+      "name": "365CLOUD.AI",
+      "url": "https://365cloud.ai/",
+      "description": "365cloud.ai → Business Engineering für Microsoft 365, Power Platform & Azure für die digitale Transformation.",
+      "founder": {
+        "@type": "Person",
+        "name": "Philipp Schaffner",
+        "url": "https://philipp-schaffner.com"
+      },
+    },
+    {
       "@type": "WebSite",
       "@id": "https://365cloud.ai/#website",
       "url": "https://365cloud.ai/",
       "name": "365CLOUD.AI",
-      "description": "365cloud.ai → Engineering für Microsoft 365, Power Platform & Azure für die Digitale Transformation. Kostenschätzer inklusive!",
       "publisher": {
         "@id": "https://365cloud.ai/#organization"
       }
@@ -36,18 +47,15 @@
       "@type": "WebPage",
       "@id": "https://365cloud.ai/de/imprint/#webpage",
       "url": "https://365cloud.ai/de/imprint/",
-      "name": "Impressum | 365cloud.ai",
-      "description": "Impressum von 365cloud.ai.",
+      "name": "Impressum | 365CLOUD.AI",
+      "description": "Impressum & rechtliche Informationen für 365CLOUD.AI.",
       "inLanguage": "de",
       "isPartOf": {
         "@id": "https://365cloud.ai/#website"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://365cloud.ai/#organization",
-      "name": "365cloud.ai",
-      "url": "https://365cloud.ai/"
+      },
+      "mainEntity": {
+        "@id": "https://365cloud.ai/#organization"
+      },
     }
   ]
 }
